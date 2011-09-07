@@ -74,7 +74,6 @@ public class DocTypeRenderer extends BasicDocTypeRenderer {
         // write the xml declaration directly to the reponse, after clearing
         // the buffer, so that it will end up at the very top of the document
         HttpServletResponse response = (HttpServletResponse)context.getExternalContext().getResponse();
-        response.resetBuffer();
         response.getWriter().write(XML_HEAD);
 
         String dtd = (String) component.getAttributes().get("DTD");
