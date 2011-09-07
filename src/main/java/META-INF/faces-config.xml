@@ -1,0 +1,592 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+    <factory>
+        <render-kit-factory>
+            com.ericsson.sn.mobilefaces.MobileRenderKitFactory
+        </render-kit-factory>
+    </factory>
+
+
+    <!--HTML renderkit-->
+    <render-kit>
+
+        <renderer>
+            <description>DocTypeRenderer is the renderer for DocType head on HTML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.DocType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.html.DocTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonTitleRenderer is the renderer for title tag (inside head) on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Title</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonTitleRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CssRefRenderer is the renderer for stylesheet link references on HTML/XHTML-MP pages</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.CssRef</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CssRefRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>PageTypeRenderer is the renderer for page tag on HTML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.PageType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.html.PageTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonBodyRenderer is the renderer for body tag on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Body</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonBodyRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonHeadingRenderer is the renderer for heading tag on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Heading</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonHeadingRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ScriptRefRenderer is the renderer for script import reference</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.ScriptRef</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.ScriptRefRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MediaAdaptor renders nothing for itself</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.MediaAdaptor</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.NoopRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ImageRenderer is the renderer for an image on an HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Graphic</component-family>
+            <renderer-type>javax.faces.Image</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.ImageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>Card renders nothing for itself on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Card</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.NoopRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>GroupRenderer is the renderer for a group for content on HTML page</description>
+            <component-family>javax.faces.Panel</component-family>
+            <renderer-type>javax.faces.Group</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.GroupRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+    <!--XHTML-MP renderkit-->
+    <render-kit>
+        <render-kit-id>XHTML_MP</render-kit-id>
+        <render-kit-class>
+            com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.XhtmlmpRenderKit
+        </render-kit-class>
+
+        <renderer>
+            <description>DocTypeRenderer is the renderer for DocType head on XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.DocType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.DocTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonTitleRenderer is the renderer for title tag (inside head) on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Title</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonTitleRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CssRefRenderer is the renderer for stylesheet link references on HTML/XHTML-MP pages</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.CssRef</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CssRefRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>PageTypeRenderer is the renderer for page type tag of XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.PageType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.PageTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonBodyRenderer is the renderer for body tag on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Body</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonBodyRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommonHeadingRenderer is the renderer for heading tag on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Heading</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.CommonHeadingRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ScriptRefRenderer is the renderer for script import reference</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.ScriptRef</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.ScriptRefRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MediaAdaptor renders nothing for itself</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.MediaAdaptor</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.NoopRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>Card renders nothing for itself on HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Card</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.NoopRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TextRenderer is the renderer for a plain text on XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Text</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TextRenderer is the renderer for a input box on XHTML-MP page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Text</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>FormRenderer is the renderer for a form on XHTML-MP page</description>
+            <component-family>javax.faces.Form</component-family>
+            <renderer-type>javax.faces.Form</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.FormRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ButtonRenderer is the renderer for UICommand component on XHTML-MP page</description>
+            <component-family>javax.faces.Command</component-family>
+            <renderer-type>javax.faces.Button</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.ButtonRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ImageRenderer is the renderer for an image on an HTML/XHTML-MP page</description>
+            <component-family>javax.faces.Graphic</component-family>
+            <renderer-type>javax.faces.Image</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.ImageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TableRenderer is the renderer for a data table on XHTML-MP page</description>
+            <component-family>javax.faces.Data</component-family>
+            <renderer-type>javax.faces.Table</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.TableRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>GridRenderer is the renderer for a component grid on XHTML-MP page</description>
+            <component-family>javax.faces.Panel</component-family>
+            <renderer-type>javax.faces.Grid</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.GridRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessageRenderer is the renderer for a message item on XHTML-MP page</description>
+            <component-family>javax.faces.Message</component-family>
+            <renderer-type>javax.faces.Message</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.MessageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessagesRenderer is the renderer for a message group item on XHTML-MP page</description>
+            <component-family>javax.faces.Messages</component-family>
+            <renderer-type>javax.faces.Messages</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.MessagesRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessageRenderer is the renderer for a formatted message item on XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Format</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.MessageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>LabelRenderer is the renderer for a label of some other components on XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Label</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.LabelRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ButtonRenderer is the renderer for UICommand component on XHTML-MP page</description>
+            <component-family>javax.faces.Command</component-family>
+            <renderer-type>javax.faces.Button</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.ButtonRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommandLinkRenderer is just a normal button on XHTML-MP page</description>
+            <component-family>javax.faces.Command</component-family>
+            <renderer-type>javax.faces.Link</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.CommandLinkRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>OutputLinkRenderer is the renderer for a simple link on XHTML-MP page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Link</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.OutputLinkRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>HiddenRenderer is the renderer for a hidden field on XHTML-MP page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Hidden</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.HiddenRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TextareaRenderer is the renderer for a text input area on XHTML-MP page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Textarea</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.TextareaRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>SecretRenderer is the renderer for a password input box on XHTML-MP page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Secret</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.SecretRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>GroupRenderer is the renderer for a group for content on XHTML-MP page</description>
+            <component-family>javax.faces.Panel</component-family>
+            <renderer-type>javax.faces.Group</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.GroupRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CheckboxRenderer is the renderer for a single Checkbox on XHTML-MP page</description>
+            <component-family>javax.faces.SelectBoolean</component-family>
+            <renderer-type>javax.faces.Checkbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.CheckboxRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CheckboxListRenderer is the renderer for CheckboxList on XHTML-MP page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Checkbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.CheckboxListRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for multi-select menu on XHTML-MP page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Menu</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for single-select menu on XHTML-MP page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Menu</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ListboxRenderer is the renderer for a menu list on XHTML-MP page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Listbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.ListboxRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ListboxRenderer is the renderer for a menu list on XHTML-MP page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Listbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.ListboxRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>RadioRenderer is the renderer for a list of radio buttons on XHTML-MP page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Radio</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.xhtmlmp.RadioRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+    <!--WML renderkit-->
+    <render-kit>
+        <render-kit-id>WML</render-kit-id>
+        <render-kit-class>
+            com.ericsson.sn.mobilefaces.renderkit.wml.WmlRenderKit
+        </render-kit-class>
+
+        <renderer>
+            <description>BodyRenderer is the renderer for generating WML card tag</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Body</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.BodyRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>DocTypeRenderer is the renderer for DocType head on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.DocType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.DocTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TitleRenderer is the renderer for an empty tag (inside head) on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Title</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TitleRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>PageTypeRenderer is the renderer for page type tag of WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.PageType</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.PageTypeRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>HeadingRenderer is the renderer for heading tag on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Heading</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.HeadingRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CardRenderer is the renderer for card tag on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.Card</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.CardRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ScriptRefRenderer is the renderer for script import reference</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.ScriptRef</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.ScriptRefRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MediaAdaptor renders nothing for itself</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>com.ericsson.sn.mobilefaces.MediaAdaptor</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.share.NoopRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TextRenderer is the renderer for a plain text on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Text</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TextRenderer is the renderer for a input box on WML page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Text</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>FormRenderer is the renderer for simulating a form on WML page</description>
+            <component-family>javax.faces.Form</component-family>
+            <renderer-type>javax.faces.Form</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.FormRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ButtonRenderer is the renderer for softkey on WML page</description>
+            <component-family>javax.faces.Command</component-family>
+            <renderer-type>javax.faces.Button</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.ButtonRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>ImageRenderer is the renderer for a image on WML page</description>
+            <component-family>javax.faces.Graphic</component-family>
+            <renderer-type>javax.faces.Image</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.ImageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>Textarea is same as Text input box on WML page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Textarea</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>SecretRenderer is the renderer for a password input box on WML page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Secret</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.SecretRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>TableRenderer is the renderer for a data table on WML page</description>
+            <component-family>javax.faces.Data</component-family>
+            <renderer-type>javax.faces.Table</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TableRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>GridRenderer is the renderer for a component grid on WML page</description>
+            <component-family>javax.faces.Panel</component-family>
+            <renderer-type>javax.faces.Grid</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.GridRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessageRenderer is the renderer for a message item on WML page</description>
+            <component-family>javax.faces.Message</component-family>
+            <renderer-type>javax.faces.Message</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MessageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessagesRenderer is the renderer for a message group item on WML page</description>
+            <component-family>javax.faces.Messages</component-family>
+            <renderer-type>javax.faces.Messages</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MessagesRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MessageRenderer is the renderer for a formatted message item on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Format</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MessageRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>Label is just a plain text on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Label</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.TextRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>HiddenRenderer is the renderer for a hidden field on WML page</description>
+            <component-family>javax.faces.Input</component-family>
+            <renderer-type>javax.faces.Hidden</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.HiddenRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>GroupRenderer is the renderer for a group for content on WML page</description>
+            <component-family>javax.faces.Panel</component-family>
+            <renderer-type>javax.faces.Group</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.GroupRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CheckboxRenderer is the renderer for a single Checkbox on WML page</description>
+            <component-family>javax.faces.SelectBoolean</component-family>
+            <renderer-type>javax.faces.Checkbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.CheckboxRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>CommandLinkRenderer is the renderer for a link button on WML page</description>
+            <component-family>javax.faces.Command</component-family>
+            <renderer-type>javax.faces.Link</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.CommandLinkRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>OutputLinkRenderer is the renderer for a simple link on WML page</description>
+            <component-family>javax.faces.Output</component-family>
+            <renderer-type>javax.faces.Link</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.OutputLinkRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for single-select menu on WML page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Menu</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for multi-select menu on WML page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Menu</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for single-select checkbox list on WML page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Checkbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for multi-select checkbox list on WML page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Checkbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for single-select listbox on WML page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Listbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for multi-select listbox on WML page</description>
+            <component-family>javax.faces.SelectMany</component-family>
+            <renderer-type>javax.faces.Listbox</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+
+        <renderer>
+            <description>MenuRenderer is the renderer for single-select radio list on WML page</description>
+            <component-family>javax.faces.SelectOne</component-family>
+            <renderer-type>javax.faces.Radio</renderer-type>
+            <renderer-class>com.ericsson.sn.mobilefaces.renderkit.wml.MenuRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+    <!--component-->
+    <component>
+        <description>
+            This is the Form component for WML page to simulate the Form in HTML.
+            It also implements FormValueHolder and FormComponentHolder interfaces.
+        </description>
+
+        <display-name>Form</display-name>
+        <component-type>javax.faces.HtmlForm</component-type>
+        <component-class>com.ericsson.sn.mobilefaces.component.WmlForm</component-class>
+    </component>
+
+</faces-config>

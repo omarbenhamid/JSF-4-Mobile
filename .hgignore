@@ -1,0 +1,6 @@
+syntax:glob
+*.jar
+*.class
+.DS_Store
+.svn
+target

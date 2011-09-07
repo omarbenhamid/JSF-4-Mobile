@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    <description>
+        The MobileFaces tag library contains custom JSF components for &lt;br/&gt;
+        MobileFaces to extend the JSF page for mobile devices.&lt;br/&gt;
+        See Developer Guide in Mobile JSF Kit for more details.&lt;br/&gt;
+        MobileFaces use standard JSF tags for basic components and &lt;br/&gt;
+        you can find the usage of standard JSF tags at
+        &lt;a href="http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/" target="_blank"&gt;JSF Taglib Doc&lt;/a&gt;.
+    </description>
+    <display-name>MobileFaces</display-name>
+    <tlib-version>1.1</tlib-version>
+    <short-name>m</short-name>
+    <uri>http://www.ericsson.com/sn/mobilefaces</uri>
+
+    <tag>
+        <description>
+            The doctype tag generates the DOCTYPE head for the current page.
+            It will be rendered as HTML/WML/XHTML-MP DOCTYPE by the end devices.
+        </description>
+        <name>doctype</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.DocTypeTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                The special version for current doc page.
+            </description>
+            <name>version</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The cache control for current page.
+            </description>
+            <name>cache</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The title tag generates the title tag (inside head).
+            In WML page, it will be rendered as a meta tag (content).
+        </description>
+        <name>title</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.TitleTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                Content of title.
+            </description>
+            <name>content</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The css tag generates a link reference to a stylesheet.
+            It selects different stylesheets for HTML and XHTML-MP based on
+            the file extension. In WML, this tag will not be rendered.
+        </description>
+        <name>css</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.CssRefTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                The stylesheet filename(s) (without extension)
+            </description>
+            <name>href</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The body tag generates the body tag for the current page.
+            In WML page, it will be rendered as card page.
+        </description>
+        <name>body</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.BodyTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                If true, then multi-card page for wml is enabled.
+            </description>
+            <name>cards</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the first wml card.
+            </description>
+            <name>cardTitle</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the body.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The html tag generates the page head tag; html in HTML/XHTML-MP,
+            wml in WML.
+        </description>
+        <name>html</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.XMLTag</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
+
+    <tag>
+        <description>
+            The card tag generates the card tag for WML pages.
+            card can be used to divide a long page for WML device.
+            Does nothing for other language.
+        </description>
+        <name>card</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.CardTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Current card id
+            </description>
+            <name>cardID</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Next card id for navigation.
+            </description>
+            <name>next</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Re-initializes the browser context.
+            </description>
+            <name>newcontext</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Specifies the order of card content.
+            </description>
+            <name>ordered</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Current card title.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The language used in the element.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Occurs when the user navigates to a card using a "prev" task.
+            </description>
+            <name>onenterbackward</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Occurs when the user navigates to a card using a "go" task.
+            </description>
+            <name>onenterforward</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Occurs when a "timer" expires.
+            </description>
+            <name>ontimer</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                A class name for the element.
+            </description>
+            <name>class</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The command has a "link" or a "button" layout.
+            </description>
+            <name>commandtype</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The filter tag (content filter) conditionally render its contents.
+        </description>
+        <name>filter</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.FilterTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Markup language condition setting.
+            </description>
+            <name>markup</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Screen level condition setting.
+            </description>
+            <name>screen</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Device name list setting
+            </description>
+            <name>device</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Script condition setting.
+            </description>
+            <name>script</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                If true, skip contents. Otherwise render contents.
+            </description>
+            <name>skip</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.Boolean</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 1 tag.
+        </description>
+        <name>h1</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H1Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 2 tag.
+        </description>
+        <name>h2</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H2Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 3 tag.
+        </description>
+        <name>h3</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H3Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 4 tag.
+        </description>
+        <name>h4</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H4Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 5 tag.
+        </description>
+        <name>h5</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H5Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Heading level 6 tag.
+        </description>
+        <name>h6</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.H6Tag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+                Text direction.
+            </description>
+            <name>dir</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Language code.
+            </description>
+            <name>lang</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Element class.
+            </description>
+            <name>styleClass</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                Inline style definition.
+            </description>
+            <name>style</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The title of the heading.
+            </description>
+            <name>title</name>
+            <required>false</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The media-adaptor sets a media adaptor to media components.
+        </description>
+        <name>media-adaptor</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.MediaAdaptorTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                Sets the candidate strategy list for the media-adaptor.
+            </description>
+            <name>strategy</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            The script tag sets the script reference in the head to define
+            the script code source.
+        </description>
+        <name>script</name>
+        <tag-class>com.ericsson.sn.mobilefaces.taglib.ScriptRefTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                The script code source.
+            </description>
+            <name>src</name>
+            <required>true</required>
+            <deferred-value>
+                <type>java.lang.String</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+</taglib>
