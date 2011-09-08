@@ -111,6 +111,8 @@ public abstract class BasicMessageRenderer extends BasicRenderer {
         }
 
         Iterator messageIter = getMessageIter(context, clientId, component);
+	if (!messageIter.hasNext())
+			return;
         FacesMessage curMessage = null;
         // table layout if need
         if ((layout != null) && (layout.equals("table"))) {
