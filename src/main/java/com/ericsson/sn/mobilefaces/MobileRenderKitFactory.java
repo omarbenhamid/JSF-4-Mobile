@@ -110,6 +110,7 @@ public class MobileRenderKitFactory extends RenderKitFactory {
 				renderKitId = HTML_BASIC_RENDER_KIT;
 			}
 		}
+		Log.debug("RenderKit : " + renderKitId, MobileRenderKitFactory.class);
 		RenderKit renderKit = null;
 		synchronized (renderKits) {
 			if (renderKits.containsKey(renderKitId)) {
