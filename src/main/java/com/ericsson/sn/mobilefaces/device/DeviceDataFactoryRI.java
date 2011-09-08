@@ -90,7 +90,10 @@ public class DeviceDataFactoryRI extends AbstractDeviceDataFactory {
 	 */
 	@Override
 	public DeviceData getCurrentDevice(HttpServletRequest request) {
-		return initSessionDevice(request.getServletContext(), request);
+		FacesContext context = FacesContext.getCurrentInstance();
+		ServletContext servletContext = (ServletContext)context.getExternalContext().getContext();
+		//Not using request.getServletContext() to stay compatible with Servlet API prior to 3.0
+		return initSessionDevice(servletContext, request);
 	}
 
 	// Load current device object to session
