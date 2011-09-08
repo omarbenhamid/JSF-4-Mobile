@@ -107,6 +107,7 @@ public class TextRenderer extends BasicInputRenderer {
         "maxlength",
         "lang;xml:lang",
         "tabindex",
-        "title"
+        "title",
+	"size"
     };
 }
