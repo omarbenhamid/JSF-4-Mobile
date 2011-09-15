@@ -86,6 +86,7 @@ public class BodyRenderer extends BasicRenderer {
             writer.startElement(LangConstant.TAG_CARD, component);
             writer.writeAttribute(LangConstant.ATT_ID, DEFAULT_ID, "id");
             writer.writeAttribute(LangConstant.ATT_TITLE, title, "title");
+	    writer.writeAttribute(LangConstant.ATT_NEWCONTEXT, "true", null);
         } else {
             // multi card mode and just save the state
             component.getAttributes().put(LangConstant.WML_FIRST_CARD, "true");
